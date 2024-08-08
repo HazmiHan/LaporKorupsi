@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">LaporKorupsi!</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="bg_desc">Gambar latar belakang yang menggambarkan barang bukti korupsi </string>
+    <string name="home_title">Sekilas tentang </string>
+    <string name="home_title2">lapor korupsi </string>
+    <string name="app_description">Lapor korupsi adalah layanan pengaduan bagi masyarakat yang menemukan adanya dugaan Tindak Pidana Korupsi. </string>
+    <string name="btn_lapor_text">LAPOR </string>
 </resources>
