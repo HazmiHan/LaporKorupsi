@@ -3,6 +3,10 @@
     <string name="bg_desc">Gambar latar belakang yang menggambarkan barang bukti korupsi </string>
     <string name="home_title">Sekilas tentang </string>
     <string name="home_title2">lapor korupsi </string>
-    <string name="app_description">Lapor korupsi adalah layanan pengaduan bagi masyarakat yang menemukan adanya dugaan Tindak Pidana Korupsi. </string>
-    <string name="btn_lapor_text">LAPOR </string>
+    <string name="app_description">Lapor korupsi adalah layanan pengaduan bagi masyarakat yang menemukan adanya dugaan Tindak Pidana Korupsi. Jika Anda menemukan dugaan Tindak Pidana Korupsi, segera laporkan melalui tombol di bawah.</string>
+    <string name="btn_lapor_text">Lapor Sekarang </string>
+    <string name="desc_tindak_pidana">Jenis Tindak Pidana yang Bisa Ditangani</string>
+    <string name="tindak_pidana_1">Melibatkan aparat penegak hukum, penyelenggara negara, dan orang lain yang ada kaitannya dengan tindak pidana korupsi yang dilakukan oleh aparat penegak hukum atau penyelenggara negara</string>
+    <string name="tindak_pidana_2">Menyangkut kerugian keuangan negara paling sedikit Rp1.000.000.000 (satu miliar rupiah).</string>
+
 </resources>
