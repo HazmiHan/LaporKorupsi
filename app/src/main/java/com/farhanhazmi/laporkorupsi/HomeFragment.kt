@@ -5,30 +5,21 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.google.firebase.database.DatabaseReference
+import android.widget.Button
+import com.farhanhazmi.laporkorupsi.databinding.FragmentHomeBinding
+import com.google.firebase.database.FirebaseDatabase
 
-
-///**
-// * A simple [Fragment] subclass.
-// * Use the [HomeFragment.newInstance] factory method to
-// * create an instance of this fragment.
-// */
 
 class HomeFragment : Fragment() {
 
-    private lateinit var firebaseRef: DatabaseReference
-
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
+    private lateinit var binding: FragmentHomeBinding
+    private lateinit var database: FirebaseDatabase
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false)
+
     }
 }
