@@ -4,6 +4,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.farhanhazmi.laporkorupsi.databinding.ActivityMainBinding
 import androidx.fragment.app.Fragment
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,6 +16,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         replaceFragment(HomeFragment())
+
 
         binding.bottomNavigationView.setOnItemSelectedListener {
             when(it.itemId){
