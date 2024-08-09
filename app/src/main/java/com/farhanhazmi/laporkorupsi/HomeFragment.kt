@@ -8,14 +8,15 @@ import android.view.ViewGroup
 import com.google.firebase.database.DatabaseReference
 
 
-/**
- * A simple [Fragment] subclass.
- * Use the [HomeFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+///**
+// * A simple [Fragment] subclass.
+// * Use the [HomeFragment.newInstance] factory method to
+// * create an instance of this fragment.
+// */
+
 class HomeFragment : Fragment() {
 
-    private lateinit var firebaseRef : DatabaseReference
+    private lateinit var firebaseRef: DatabaseReference
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,21 +30,5 @@ class HomeFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false)
-    }
-
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment HomeFragment.
-         */
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            HomeFragment().apply {
-
-            }
     }
 }
