@@ -59,9 +59,14 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
+//    Firebase
     implementation(platform("com.google.firebase:firebase-bom:33.1.2"))
     implementation("com.google.firebase:firebase-analytics")
 
 //    Splashscreen
     implementation("androidx.core:core-splashscreen:1.0.0")
+
+//    Material design
+    implementation("com.google.android.material:material:1.9.0")
+
 }

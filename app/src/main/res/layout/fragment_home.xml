@@ -95,6 +95,7 @@
             android:layout_marginEnd="16dp"
             android:fontFamily="@font/roboto"
             android:text="@string/desc_tindak_pidana"
+            android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="34sp"
             app:layout_constraintEnd_toEndOf="parent"

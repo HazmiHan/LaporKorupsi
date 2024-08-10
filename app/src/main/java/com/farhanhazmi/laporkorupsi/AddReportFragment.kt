@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.farhanhazmi.laporkorupsi.databinding.FragmentAddReportBinding
 import com.farhanhazmi.laporkorupsi.models.Report
-import com.farhanhazmi.laporkorupsi.models.test
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
@@ -44,25 +43,56 @@ class AddReportFragment : Fragment() {
         val pelaku = binding.editPelaku.text.toString()
         val modus = binding.editModusOperandi.text.toString()
 
-        if (nama.isEmpty()) binding.editNama.error = "Masukkan nama pelapor"
-        if (alamat.isEmpty()) binding.editAlamat.error = "Masukkan alamat pelapor"
-        if (telepon.isEmpty()) binding.editTelepon.error = "Masukkan nomor telepon pelapor"
-        if (deskripsi.isEmpty()) binding.editDeskripsiKejadian.error = "Deskripsikan kejadian secara jelas"
-        if (tempat.isEmpty()) binding.editTempat.error = "Masukkan tempat kejadian"
-        if (tanggal.isEmpty()) binding.editTanggal.error = "Masukkan tanggal kejadian"
-        if (pelaku.isEmpty()) binding.editPelaku.error = "Masukkan pelaku dugaan korupsi"
-        if (modus.isEmpty()) binding.editModusOperandi.error = "Masukkan modus operandi pelaku"
+        var isValid = true
 
-        val reportId = firebaseRef.push().key!!
-        val reports = Report(reportId, nama, alamat, telepon, deskripsi, tempat, tanggal, pelaku, modus)
+        if (nama.isEmpty()) {
+            binding.editNama.error = "Masukkan nama pelapor"
+            isValid = false
+        }
+        if (alamat.isEmpty()) {
+            binding.editAlamat.error = "Masukkan alamat pelapor"
+            isValid = false
+        }
+        if (telepon.isEmpty()) {
+            binding.editTelepon.error = "Masukkan nomor telepon pelapor"
+            isValid = false
+        }
+        if (deskripsi.isEmpty()) {
+            binding.editDeskripsiKejadian.error = "Deskripsikan kejadian secara jelas"
+            isValid = false
+        }
+        if (tempat.isEmpty()) {
+            binding.editTempat.error = "Masukkan tempat kejadian"
+            isValid = false
+        }
+        if (tanggal.isEmpty()) {
+            binding.editTanggal.error = "Masukkan tanggal kejadian"
+            isValid = false
+        }
+        if (pelaku.isEmpty()){
+            binding.editPelaku.error = "Masukkan pelaku dugaan korupsi"
+            isValid = false
+        }
+        if (modus.isEmpty()) {
+            binding.editModusOperandi.error = "Masukkan modus operandi pelaku"
+            isValid = false
+        }
 
-        firebaseRef.child(reportId).setValue(reports)
-            .addOnCompleteListener {
-                Toast.makeText(context, "Laporan berhasil dikirim", Toast.LENGTH_SHORT).show()
-                (activity as? MainActivity)?.replaceFragment(HomeFragment())
-            }
-            .addOnFailureListener {
-                Toast.makeText(context, "Error ${it.message}", Toast.LENGTH_SHORT).show()
-            }
+        if (isValid) {
+            val reportId = firebaseRef.push().key!!
+            val reports =
+                Report(reportId, nama, alamat, telepon, deskripsi, tempat, tanggal, pelaku, modus)
+
+            firebaseRef.child(reportId).setValue(reports)
+                .addOnCompleteListener {
+                    Toast.makeText(context, "Laporan berhasil dikirim", Toast.LENGTH_SHORT).show()
+                    (activity as? MainActivity)?.replaceFragment(HomeFragment())
+                }
+                .addOnFailureListener {
+                    Toast.makeText(context, "Error ${it.message}", Toast.LENGTH_SHORT).show()
+                }
+        }else {
+            Toast.makeText(context, "Tolong perbaiki data yang salah", Toast.LENGTH_SHORT).show()
+        }
     }
 }
