@@ -16,7 +16,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         replaceFragment(HomeFragment())
 
-
         binding.bottomNavigationView.setOnItemSelectedListener {
             when(it.itemId){
 
@@ -32,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun replaceFragment(fragment: Fragment){
+    public fun replaceFragment(fragment: Fragment){
 
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
