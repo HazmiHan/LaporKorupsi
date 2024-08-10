@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.farhanhazmi.laporkorupsi.databinding.FragmentAddReportBinding
 import com.farhanhazmi.laporkorupsi.models.Report
+import com.farhanhazmi.laporkorupsi.models.test
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
@@ -24,7 +25,7 @@ class AddReportFragment : Fragment() {
     ): View {
         // Inflate the layout for this fragment
         _binding = FragmentAddReportBinding.inflate(inflater, container, false)
-        firebaseRef = FirebaseDatabase.getInstance().getReference("Report")
+        firebaseRef = FirebaseDatabase.getInstance("https://laporkorupsi-f01d9-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Report")
 
         binding.btnSubmit.setOnClickListener {
             saveData()
@@ -58,7 +59,7 @@ class AddReportFragment : Fragment() {
         firebaseRef.child(reportId).setValue(reports)
             .addOnCompleteListener {
                 Toast.makeText(context, "Laporan berhasil dikirim", Toast.LENGTH_SHORT).show()
-
+                (activity as? MainActivity)?.replaceFragment(HomeFragment())
             }
             .addOnFailureListener {
                 Toast.makeText(context, "Error ${it.message}", Toast.LENGTH_SHORT).show()
