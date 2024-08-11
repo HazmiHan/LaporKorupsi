@@ -1,6 +1,7 @@
 package com.farhanhazmi.laporkorupsi
 
 import android.os.Bundle
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.farhanhazmi.laporkorupsi.databinding.ActivityMainBinding
 import androidx.fragment.app.Fragment
@@ -16,6 +17,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
+        enableEdgeToEdge()
         setContentView(binding.root)
         replaceFragment(HomeFragment())
 
